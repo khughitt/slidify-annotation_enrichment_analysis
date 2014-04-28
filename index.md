@@ -17,6 +17,7 @@ github      :
 <style type='text/css'>
     .title-slide {
         background: #e3f2fc;
+        text-shadow: 2px 2px 5px #666;
         color: #2d4152;
     }
     slides > slide {
@@ -57,9 +58,50 @@ $(function() {
 >- What are the effects of these assumptions the resulting interpretation?
 >- Can we do better?
 
+---
+
+## Example: T. cruzi co-expression network
+
+One example of where this kind of enrichment analysis could be useful is for
+determining possible roles for clusters of co-expressed genes.
+
+![tcruzi coex network](assets/img/ModuleMembership.png)
+
 ---.segue .dark
 
 ## Background
+
+---
+
+## Gene Ontology (GO)
+
+### What is GO?
+
+<q>The Gene Ontology is a controlled vocabulary, a set of standard terms—words
+and phrases—used for indexing and retrieving information. In addition to
+defining terms, GO also defines the relationships between the terms, making
+it a structured vocabulary. (geneontology.org)</q>
+
+- Provides a common language to describe features of genes from all different
+  species.
+- Includes three separate ontologies relating to:
+  - Location (cellular component)
+  - Process/pathway involved in (biological process)
+  - Specific function (molecular function)
+- Each ontology is represented by a directed acyclic graph (DAG).
+- Deeper levels in the ontology correspond to more specific descriptions.
+- Machine-readable.
+
+---
+
+## Gene Ontology (GO)
+
+### Gene Ontology structure
+
+![GO example](assets/img/diag-ontology-graph.gif)
+<span class='caption'>
+(source: http://www.geneontology.org/GO.ontology.structure.shtml)
+</span>
 
 ---
 
@@ -109,22 +151,87 @@ likely to be selected.
 
 ---.segue .dark
 
-## Annotation Enrichment Analysis
+## Results
 
 ---
 
-## Annotation Enrichment Analysis
+## Gene ontology characteristics
 
-- Downloaded all human gene-term associations from
-  [GO](http://www.geneontology.org/).
+### Gene-term graph
+
+- Downloaded all human gene-term associations from the
+  [Gene Ontology website](http://www.geneontology.org/).
 - Constructed a gene/annotation bipartite graph, represented by an 
-  $n_G \cross n_T$ adjacency matrix 
+  $n_G \times n_T$ adjacency matrix 
 
-![adj matrix](assets/img/adj_matrix.png)
+![adj matrix](assets/img/adj_matrix_small.png)
 
 - $n_G$ - number of genes
 - $n_T$ - number of GO terms
+- $A_{ij} = 1$ - Gene $i$ is annotated with term $j$
+- $A_{ij} = 0$ - Gene $i$ is not annotated with term $j$
 
+---
+
+## Gene ontology characteristics
+
+### Gene and term degree distributions
+
+![fig 1](assets/img/srep04191-f1.jpg)
+
+- <span class='red'>Biological Process</span> terms dominate the human
+  annotations.
+- Degree of term ($k_t$) distribution is "heavy-tailed"; most terms are
+  associated with only a few genes, but some terms are used for a huge 
+  number of genes.
+
+---
+
+## Gene ontology characteristics
+
+### Biological Process
+
+The remainder of the results are based on the biological process ontology:
+
+- 656,783 annotations
+- 15,213 genes (avg: 43.2 annotations)
+- 10192 terms (avg: 64.4 annotations)
+
+---
+
+## Question: What is the effect of annotation database properties on functional enrichment analysis?
+
+### Experiment design:
+
+- Created 200 random gene sets:
+  - $N_g$=200 genes in each set (a "typical" gene set size)
+  - Varied number of annotations ($M_g$)
+
+---
+
+## Question: What is the effect of annotation database properties on functional enrichment analysis?
+
+  - Determined FET enrichment score for each of the 10192 BP GO terms
+  - # Unique annotations $\propto$ GO enrichment significance!
+
+![fig2a-b](assets/img/srep04191-f2a-b.jpg)
+
+---
+
+## Perhaps the problem isn't quite so bad after correcting for multiple testing...
+
+- Multiple testing correction alone is not enough to deal with this bias,
+  although it does seem to severely reduce the problem.
+
+![figs2](assets/img/srep04191-f2a-b.jpg)
+
+---
+
+## Limitations
+
+- Performance of AEA only compared with Fisher's Exact Test (FET); how does the
+  performance comparew to other GO methods?
+- Only looked at BP.
 
 ---.references
 
