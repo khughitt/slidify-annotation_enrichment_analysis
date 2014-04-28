@@ -39,16 +39,30 @@ $(function() {
 });
 </script>
 
+## Overview
+
+>- Recent high-throughput methods (microarray, RNA-Seq, etc) made it easy to
+   produce large datasets comparing samples in different conditions.
+>- The end result of many of these analyses, however, is often a large list of
+   genes that are associated with one condition or the other.
+>- Numerous tools have been developed to look for "enrichment" in these
+   resulting gene sets for genes associated with a particular known pathway or
+   functional annotation.
+>- These methods (GSEA, etc) often use statistics which make some assumptions
+   about the distribution of annotations which may not be valid.
+>- What are the effects of these assumptions the resulting interpretation?
+>- Can we do better?
+
+---.segue .dark
+
 ## Background
 
 ---
 
-## Background
+## Many functional enrichment tools exist
 
-
-
-
-
+![Huang table 1](assets/img/Huang_table1.png)
+<span class='caption'>Huang et al. (2009) Table 1</span>
 
 ---.references
 
@@ -58,5 +72,6 @@ $(function() {
 
 
 
+- Kimberly Glass, Michelle Girvan,   (2014) Annotation Enrichment Analysis: an Alternative Method For Evaluating The Functional Properties of Gene Sets.  <em>Scientific Reports</em>  <strong>4</strong>  <a href="http://dx.doi.org/10.1038/srep04191">10.1038/srep04191</a>
 - D. W. Huang, B. T. Sherman, R. A. Lempicki,   (2008) Bioinformatics Enrichment Tools: Paths Toward The Comprehensive Functional Analysis of Large Gene Lists.  <em>Nucleic Acids Research</em>  <strong>37</strong>  1-13  <a href="http://dx.doi.org/10.1093/nar/gkn923">10.1093/nar/gkn923</a>
 

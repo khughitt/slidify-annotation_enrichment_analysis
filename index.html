@@ -75,13 +75,27 @@ $(function() {
 });
 </script>
 
-<h2>Background</h2>
+<h2>Overview</h2>
+
+<ul class = "build incremental">
+<li>Recent high-throughput methods (microarray, RNA-Seq, etc) made it easy to
+produce large datasets comparing samples in different conditions.</li>
+<li>The end result of many of these analyses, however, is often a large list of
+genes that are associated with one condition or the other.</li>
+<li>Numerous tools have been developed to look for &quot;enrichment&quot; in these
+resulting gene sets for genes associated with a particular known pathway or
+functional annotation.</li>
+<li>These methods (GSEA, etc) often use statistics which make some assumptions
+about the distribution of annotations which may not be valid.</li>
+<li>What are the effects of these assumptions the resulting interpretation?</li>
+<li>Can we do better?</li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-2" style="background:;">
+<slide class="segue dark" id="slide-2" style="background:;">
   <hgroup>
     <h2>Background</h2>
   </hgroup>
@@ -91,12 +105,25 @@ $(function() {
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="references" id="slide-3" style="background:;">
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Many functional enrichment tools exist</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/Huang_table1.png" alt="Huang table 1">
+<span class='caption'>Huang et al. (2009) Table 1</span></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="references" id="slide-4" style="background:;">
   <hgroup>
     <h2>References</h2>
   </hgroup>
   <article data-timings="">
     <ul>
+<li>Kimberly Glass, Michelle Girvan,   (2014) Annotation Enrichment Analysis: an Alternative Method For Evaluating The Functional Properties of Gene Sets.  <em>Scientific Reports</em>  <strong>4</strong>  <a href="http://dx.doi.org/10.1038/srep04191">10.1038/srep04191</a></li>
 <li>D. W. Huang, B. T. Sherman, R. A. Lempicki,   (2008) Bioinformatics Enrichment Tools: Paths Toward The Comprehensive Functional Analysis of Large Gene Lists.  <em>Nucleic Acids Research</em>  <strong>37</strong>  1-13  <a href="http://dx.doi.org/10.1093/nar/gkn923">10.1093/nar/gkn923</a></li>
 </ul>
 
@@ -122,8 +149,14 @@ $(function() {
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='References'>
+        data-slide=3 title='Many functional enrichment tools exist'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='References'>
+         4
       </a>
     </li>
   </ul>
