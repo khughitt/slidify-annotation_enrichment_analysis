@@ -44,11 +44,15 @@
     
 
     <!-- SLIDES -->
-    <slide class="segue dark" id="slide-1" style="background:;">
+    <slide class="" id="slide-1" style="background:;">
   <article data-timings="">
     <!-- Custom Styles -->
 
 <style type='text/css'>
+    .title-slide {
+        background: #e3f2fc;
+        color: #2d4152;
+    }
     slides > slide {
         height: 800px;
         margin-top: -400px;
@@ -117,7 +121,107 @@ about the distribution of annotations which may not be valid.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="references" id="slide-4" style="background:;">
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Common statistics used for enrichment analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Fisher&#39;s Exact Test (FET)</li>
+<li>Binomial test</li>
+<li>Hypergeometric test</li>
+<li>Chi-squared test</li>
+</ul>
+
+<p>All of these methods assume that, under the null hypothesis, genes are equally
+likely to be selected.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Gene Set Enrichment Analysis (GSEA)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Most popular tool for enrichment analysis</li>
+<li>Uses variant of Kolmogorov–Smirnov test
+
+<ul>
+<li>Compares distributions of two samples</li>
+<li>Null hypothesis: the samples were drawn from the same distribution</li>
+</ul></li>
+<li>Looks for enrichment in genes with a known property (e.g. GO annotation) at
+the top of a list of genes ranked by differential expression, etc.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Gene Set Enrichment Analysis (GSEA)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/Subramanian_F1.large.jpg" alt="GSEA fig1">
+<span class='caption'>Subramanian et al. (2005) Figure 1</span></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Fisher&#39;s Exact Test (FET)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The most common test statistic used for functional enrichment</li>
+<li>Considers the overlap between experiment gene set and set of genes with some
+known functional annotation.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Annotation Enrichment Analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Annotation Enrichment Analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Downloaded all human gene-term associations from
+<a href="http://www.geneontology.org/">GO</a>.</li>
+<li>Constructed a gene/annotation bipartite graph, represented by an 
+\(n_G \cross n_T\) adjacency matrix </li>
+</ul>
+
+<p><img src="assets/img/adj_matrix.png" alt="adj matrix"></p>
+
+<ul>
+<li>\(n_G\) - number of genes</li>
+<li>\(n_T\) - number of GO terms</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="references" id="slide-10" style="background:;">
   <hgroup>
     <h2>References</h2>
   </hgroup>
@@ -125,6 +229,7 @@ about the distribution of annotations which may not be valid.</li>
     <ul>
 <li>Kimberly Glass, Michelle Girvan,   (2014) Annotation Enrichment Analysis: an Alternative Method For Evaluating The Functional Properties of Gene Sets.  <em>Scientific Reports</em>  <strong>4</strong>  <a href="http://dx.doi.org/10.1038/srep04191">10.1038/srep04191</a></li>
 <li>D. W. Huang, B. T. Sherman, R. A. Lempicki,   (2008) Bioinformatics Enrichment Tools: Paths Toward The Comprehensive Functional Analysis of Large Gene Lists.  <em>Nucleic Acids Research</em>  <strong>37</strong>  1-13  <a href="http://dx.doi.org/10.1093/nar/gkn923">10.1093/nar/gkn923</a></li>
+<li>A. Subramanian, P. Tamayo, V. K. Mootha, S. Mukherjee, B. L. Ebert, M. A. Gillette, A. Paulovich, S. L. Pomeroy, T. R. Golub, E. S. Lander, J. P. Mesirov,   (2005) Gene Set Enrichment Analysis: A Knowledge-Based Approach For Interpreting Genome-Wide Expression Profiles.  <em>Proceedings of The National Academy of Sciences</em>  <strong>102</strong>  15545-15550  <a href="http://dx.doi.org/10.1073/pnas.0506580102">10.1073/pnas.0506580102</a></li>
 </ul>
 
   </article>
@@ -155,8 +260,44 @@ about the distribution of annotations which may not be valid.</li>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='References'>
+        data-slide=4 title='Common statistics used for enrichment analysis'>
          4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Gene Set Enrichment Analysis (GSEA)'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Gene Set Enrichment Analysis (GSEA)'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Fisher&#39;s Exact Test (FET)'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Annotation Enrichment Analysis'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Annotation Enrichment Analysis'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='References'>
+         10
       </a>
     </li>
   </ul>

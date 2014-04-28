@@ -11,10 +11,14 @@ mode        : selfcontained
 github      : 
   user: khughitt
   repo: slidify-annotation_enrichment_analysis
---- .segue .dark
+---
 
 <!-- Custom Styles -->
 <style type='text/css'>
+    .title-slide {
+        background: #e3f2fc;
+        color: #2d4152;
+    }
     slides > slide {
         height: 800px;
         margin-top: -400px;
@@ -64,6 +68,64 @@ $(function() {
 ![Huang table 1](assets/img/Huang_table1.png)
 <span class='caption'>Huang et al. (2009) Table 1</span>
 
+---
+
+## Common statistics used for enrichment analysis
+
+- Fisher's Exact Test (FET)
+- Binomial test
+- Hypergeometric test
+- Chi-squared test
+
+All of these methods assume that, under the null hypothesis, genes are equally
+likely to be selected.
+
+---
+
+## Gene Set Enrichment Analysis (GSEA)
+
+- Most popular tool for enrichment analysis
+- Uses variant of Kolmogorov–Smirnov test
+  - Compares distributions of two samples
+  - Null hypothesis: the samples were drawn from the same distribution
+- Looks for enrichment in genes with a known property (e.g. GO annotation) at
+  the top of a list of genes ranked by differential expression, etc.
+
+---
+
+## Gene Set Enrichment Analysis (GSEA)
+
+![GSEA fig1](assets/img/Subramanian_F1.large.jpg)
+<span class='caption'>Subramanian et al. (2005) Figure 1</span>
+
+---
+
+## Fisher's Exact Test (FET)
+
+- The most common test statistic used for functional enrichment
+- Considers the overlap between experiment gene set and set of genes with some
+  known functional annotation.
+
+
+---.segue .dark
+
+## Annotation Enrichment Analysis
+
+---
+
+## Annotation Enrichment Analysis
+
+- Downloaded all human gene-term associations from
+  [GO](http://www.geneontology.org/).
+- Constructed a gene/annotation bipartite graph, represented by an 
+  $n_G \cross n_T$ adjacency matrix 
+
+![adj matrix](assets/img/adj_matrix.png)
+
+- $n_G$ - number of genes
+- $n_T$ - number of GO terms
+
+
 ---.references
 
 ## References
@@ -74,4 +136,5 @@ $(function() {
 
 - Kimberly Glass, Michelle Girvan,   (2014) Annotation Enrichment Analysis: an Alternative Method For Evaluating The Functional Properties of Gene Sets.  <em>Scientific Reports</em>  <strong>4</strong>  <a href="http://dx.doi.org/10.1038/srep04191">10.1038/srep04191</a>
 - D. W. Huang, B. T. Sherman, R. A. Lempicki,   (2008) Bioinformatics Enrichment Tools: Paths Toward The Comprehensive Functional Analysis of Large Gene Lists.  <em>Nucleic Acids Research</em>  <strong>37</strong>  1-13  <a href="http://dx.doi.org/10.1093/nar/gkn923">10.1093/nar/gkn923</a>
+- A. Subramanian, P. Tamayo, V. K. Mootha, S. Mukherjee, B. L. Ebert, M. A. Gillette, A. Paulovich, S. L. Pomeroy, T. R. Golub, E. S. Lander, J. P. Mesirov,   (2005) Gene Set Enrichment Analysis: A Knowledge-Based Approach For Interpreting Genome-Wide Expression Profiles.  <em>Proceedings of The National Academy of Sciences</em>  <strong>102</strong>  15545-15550  <a href="http://dx.doi.org/10.1073/pnas.0506580102">10.1073/pnas.0506580102</a>
 
