@@ -223,7 +223,13 @@ The remainder of the results are based on the biological process ontology:
 - Multiple testing correction alone is not enough to deal with this bias,
   although it does seem to severely reduce the problem.
 
-![figs2](assets/img/srep04191-f2a-b.jpg)
+![figs2](assets/img/srep04191-fs2.jpg)
+
+---
+
+## Annotation Enrichment Analysis (AEA)
+
+![fig3](assets/img/srep04191-f3.jpg)
 
 ---
 
@@ -231,7 +237,9 @@ The remainder of the results are based on the biological process ontology:
 
 - Performance of AEA only compared with Fisher's Exact Test (FET); how does the
   performance comparew to other GO methods?
-- Only looked at BP.
+- Only looked at Biological Process ontology -- is the picture the same for the
+  other GO sub-ontologies?
+- Currently only implemented in C++ (R bindings would be nice.)
 
 ---.references
 
