@@ -85,7 +85,7 @@ and phrases—used for indexing and retrieving information. In addition to
 defining terms, GO also defines the relationships between the terms, making
 it a structured vocabulary.</q> - geneontology.org
 
----
+---.small
 
 ## Gene Ontology (GO)
 
@@ -93,13 +93,20 @@ it a structured vocabulary.</q> - geneontology.org
 
 - Provides a common language to describe features of genes from all different
   species.
+- GO database includes two main parts:
+    - Ontologies
+    - Gene annotations
 - Includes three separate ontologies relating to:
-  - Location (cellular component)
-  - Process/pathway involved in (biological process)
-  - Specific function (molecular function)
+    - Location (cellular component)
+    - Process/pathway involved in (biological process)
+    - Specific function (molecular function)
 - Each ontology is represented by a directed acyclic graph (DAG).
+- Two different types of relationships exist between nodes: 
+    - *is-a*, and
+    - *part-of*
 - Deeper levels in the ontology correspond to more specific descriptions.
-- Machine-readable.
+- Maintained and developed by a consortium of scientists ([Gene Ontology
+  Consortium](http://www.geneontology.org/GO.consortiumlist.shtml))
 
 ---
 
@@ -148,6 +155,23 @@ likely to be selected.
 
 ![GSEA fig1](assets/img/Subramanian_F1.large.jpg)
 <span class='caption'>Subramanian et al. (2005) Figure 1</span>
+
+---
+
+## GOstat
+
+- Beißbarth & Speed (2004)
+- Computes frequencies of all GO terms in two sets of genes:
+  - Experiment set
+  - Reference set (e.g. entire GO db)
+- Uses $\chi^2$ and Fisher's Exact test to look for terms which are enriched in
+  either gene set with respect to the other.
+- Performs multiple testing correction using either Holm or Benjamini and
+  Hochberg correction.
+- Website: http://gostat.wehi.edu.au/
+- Not to be confused with
+  "[GOstats](http://www.bioconductor.org/packages/release/bioc/html/GOstats.html)",
+  a Bioconductor package for working with GO and microarray data...
 
 ---
 
@@ -330,6 +354,7 @@ datasets:
 
 
 
+- T. Beissbarth, T. P. Speed,   (2004) Gostat: Find Statistically Overrepresented Gene Ontologies Within A Group of Genes.  <em>Bioinformatics</em>  <strong>20</strong>  1464-1465  <a href="http://dx.doi.org/10.1093/bioinformatics/bth088">10.1093/bioinformatics/bth088</a>
 - Kimberly Glass, Michelle Girvan,   (2014) Annotation Enrichment Analysis: an Alternative Method For Evaluating The Functional Properties of Gene Sets.  <em>Scientific Reports</em>  <strong>4</strong>  <a href="http://dx.doi.org/10.1038/srep04191">10.1038/srep04191</a>
 - D. W. Huang, B. T. Sherman, R. A. Lempicki,   (2008) Bioinformatics Enrichment Tools: Paths Toward The Comprehensive Functional Analysis of Large Gene Lists.  <em>Nucleic Acids Research</em>  <strong>37</strong>  1-13  <a href="http://dx.doi.org/10.1093/nar/gkn923">10.1093/nar/gkn923</a>
 - A. Subramanian, P. Tamayo, V. K. Mootha, S. Mukherjee, B. L. Ebert, M. A. Gillette, A. Paulovich, S. L. Pomeroy, T. R. Golub, E. S. Lander, J. P. Mesirov,   (2005) Gene Set Enrichment Analysis: A Knowledge-Based Approach For Interpreting Genome-Wide Expression Profiles.  <em>Proceedings of The National Academy of Sciences</em>  <strong>102</strong>  15545-15550  <a href="http://dx.doi.org/10.1073/pnas.0506580102">10.1073/pnas.0506580102</a>
