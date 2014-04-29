@@ -557,22 +557,81 @@ enrichment scores across all signatures.</li>
 
 <slide class="" id="slide-26" style="background:;">
   <hgroup>
-    <h2>Limitations</h2>
+    <h2>Real andi random term-signature comparisons</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>Performance of AEA only compared with Fisher&#39;s Exact Test (FET); how does the
-performance comparew to other GO methods?</li>
-<li>Only looked at Biological Process ontology -- is the picture the same for the
-other GO sub-ontologies?</li>
-<li>Currently only implemented in C++ (R bindings would be nice.)</li>
+    <p><img src="assets/img/srep04191-f6.jpg" alt="fig6"></p>
+
+<ul>
+<li>Created random term sets with same number of unique genes annotated as found
+in real GO branches</li>
+<li>Measured FET/AEA enrichment in random and real go branches</li>
+<li>FET find similar numbers of &quot;significant&quot; term-signature associations in the
+real and random branches!</li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="references" id="slide-27" style="background:;">
+<slide class="segue dark" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>Conclusions</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>Conclusions</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Biases exist in GO and other annotation databases.</li>
+<li>These biases can affect the performance of statistics such as FET in
+predicting significant enrichment.</li>
+<li>Annotation Enrichment Analysis (AEA) accounts for these biases and is able is
+not as prone to detecting spurious enrichments.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>Limitations</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Performance of AEA only compared with Fisher&#39;s Exact Test (FET); how does the
+performance compare to other GO methods?</li>
+<li>Only looked at Biological Process ontology -- is the picture the same for the
+other GO sub-ontologies? Other annotation databases?</li>
+<li>Currently only implemented in C++ (R bindings would be nice.)</li>
+<li>Does not take into account any of the addition information about the members
+of the experimental gene set (e.g. DE fold-change, p-value, etc)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>Beyond the Gene Ontology...</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="http://amp.pharm.mssm.edu/Enrichr/"></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="references" id="slide-31" style="background:;">
   <hgroup>
     <h2>References</h2>
   </hgroup>
@@ -747,14 +806,38 @@ Resource. <a href="http://mathworld.wolfram.com/FishersExactTest.html">http://ma
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title='Limitations'>
+        data-slide=26 title='Real andi random term-signature comparisons'>
          26
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='References'>
+        data-slide=27 title='Conclusions'>
          27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Conclusions'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Limitations'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Beyond the Gene Ontology...'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='References'>
+         31
       </a>
     </li>
   </ul>

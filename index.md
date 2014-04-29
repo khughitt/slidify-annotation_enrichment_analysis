@@ -338,13 +338,47 @@ datasets:
 
 ---
 
+## Real andi random term-signature comparisons
+
+![fig6](assets/img/srep04191-f6.jpg)
+
+- Created random term sets with same number of unique genes annotated as found
+  in real GO branches
+- Measured FET/AEA enrichment in random and real go branches
+- FET find similar numbers of "significant" term-signature associations in the
+  real and random branches!
+
+---.segue .dark
+
+## Conclusions
+
+---
+
+## Conclusions
+
+- Biases exist in GO and other annotation databases.
+- These biases can affect the performance of statistics such as FET in
+  predicting significant enrichment.
+- Annotation Enrichment Analysis (AEA) accounts for these biases and is able is
+  not as prone to detecting spurious enrichments.
+
+---
+
 ## Limitations
 
 - Performance of AEA only compared with Fisher's Exact Test (FET); how does the
-  performance comparew to other GO methods?
+  performance compare to other GO methods?
 - Only looked at Biological Process ontology -- is the picture the same for the
-  other GO sub-ontologies?
+  other GO sub-ontologies? Other annotation databases?
 - Currently only implemented in C++ (R bindings would be nice.)
+- Does not take into account any of the addition information about the members
+  of the experimental gene set (e.g. DE fold-change, p-value, etc)
+
+---
+
+## Beyond the Gene Ontology...
+
+<iframe src="http://amp.pharm.mssm.edu/Enrichr/"></iframe>
 
 ---.references
 
