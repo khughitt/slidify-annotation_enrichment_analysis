@@ -30,7 +30,7 @@ github      :
     }
     slide a {border-bottom: none;}
     .small li { font-size: 20px; }
-    .smaller li p { font-size: 16px; }
+    .smaller li { font-size: 18px; }
     .caption { font-size: 14px; display: block; }
     .references li { font-size: 14px; }
     .references li p { font-size: 14px; }
@@ -151,12 +151,30 @@ likely to be selected.
 
 ---
 
+## GOSeq
+
+- Young et al. (2010) notice biases between gene length, number of reads, and 
+  differential expression.
+- They show that GO categories also show a length bias (many categories have
+  significantly longer or shorter genest than expected by chance), which
+  indicates that enrichment results could in turn be skewed by DE length bias.
+- GOSeq corrects for the length bias by random sampling of a fitted
+  distribution based on length and DE proportion.
+
+![GOSeq fig2](assets/img/gb-2010-11-2-r14-2.jpg)
+<span class='caption'>Young et al. (2010) Figure 2</span>
+
+---.smaller
+
 ## Fisher's Exact Test (FET)
 
 - The most common test statistic used for functional enrichment
 - Considers the overlap between experiment gene set and set of genes with some
   known functional annotation.
 
+![Fisher's Exact test example](assets/img/FET_example_wolfram.png)
+<span class='caption'>(source:
+http://mathworld.wolfram.com/FishersExactTest.html)</span>
 
 ---.segue .dark
 
@@ -315,4 +333,8 @@ datasets:
 - Kimberly Glass, Michelle Girvan,   (2014) Annotation Enrichment Analysis: an Alternative Method For Evaluating The Functional Properties of Gene Sets.  <em>Scientific Reports</em>  <strong>4</strong>  <a href="http://dx.doi.org/10.1038/srep04191">10.1038/srep04191</a>
 - D. W. Huang, B. T. Sherman, R. A. Lempicki,   (2008) Bioinformatics Enrichment Tools: Paths Toward The Comprehensive Functional Analysis of Large Gene Lists.  <em>Nucleic Acids Research</em>  <strong>37</strong>  1-13  <a href="http://dx.doi.org/10.1093/nar/gkn923">10.1093/nar/gkn923</a>
 - A. Subramanian, P. Tamayo, V. K. Mootha, S. Mukherjee, B. L. Ebert, M. A. Gillette, A. Paulovich, S. L. Pomeroy, T. R. Golub, E. S. Lander, J. P. Mesirov,   (2005) Gene Set Enrichment Analysis: A Knowledge-Based Approach For Interpreting Genome-Wide Expression Profiles.  <em>Proceedings of The National Academy of Sciences</em>  <strong>102</strong>  15545-15550  <a href="http://dx.doi.org/10.1073/pnas.0506580102">10.1073/pnas.0506580102</a>
+- Matthew D Young, Matthew J Wakefield, Gordon K Smyth, Alicia Oshlack,   (2010) Gene Ontology Analysis For Rna-Seq: Accounting For Selection Bias.  <em>Genome Biology</em>  <strong>11</strong>  R14-NA  <a href="http://dx.doi.org/10.1186/gb-2010-11-2-r14">10.1186/gb-2010-11-2-r14</a>
+
+- Weisstein, Eric W. "Fisher's Exact Test." From MathWorld--A Wolfram Web
+Resource. http://mathworld.wolfram.com/FishersExactTest.html
 

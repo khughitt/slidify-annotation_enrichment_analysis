@@ -30,7 +30,7 @@ github      :
     }
     slide a {border-bottom: none;}
     .small li { font-size: 20px; }
-    .smaller li p { font-size: 16px; }
+    .smaller li { font-size: 18px; }
     .caption { font-size: 14px; display: block; }
     .references li { font-size: 14px; }
     .references li p { font-size: 14px; }
@@ -151,12 +151,30 @@ likely to be selected.
 
 ---
 
+## GOSeq
+
+- Young et al. (2010) notice biases between gene length, number of reads, and 
+  differential expression.
+- They show that GO categories also show a length bias (many categories have
+  significantly longer or shorter genest than expected by chance), which
+  indicates that enrichment results could in turn be skewed by DE length bias.
+- GOSeq corrects for the length bias by random sampling of a fitted
+  distribution based on length and DE proportion.
+
+![GOSeq fig2](assets/img/gb-2010-11-2-r14-2.jpg)
+<span class='caption'>Young et al. (2010) Figure 2</span>
+
+---.smaller
+
 ## Fisher's Exact Test (FET)
 
 - The most common test statistic used for functional enrichment
 - Considers the overlap between experiment gene set and set of genes with some
   known functional annotation.
 
+![Fisher's Exact test example](assets/img/FET_example_wolfram.png)
+<span class='caption'>(source:
+http://mathworld.wolfram.com/FishersExactTest.html)</span>
 
 ---.segue .dark
 
@@ -313,9 +331,13 @@ library(knitcitations)
 cleanbib()
 citep('10.1038/srep04191')
 citep('10.1093/nar/gkn923')
+citep('10.1186/gb-2010-11-2-r14')
 citep('10.1073/pnas.0506580102')
 ```
 
 ```{r refs_output, echo=FALSE, results='asis'}
 bibliography('html')
 ```
+- Weisstein, Eric W. "Fisher's Exact Test." From MathWorld--A Wolfram Web
+Resource. http://mathworld.wolfram.com/FishersExactTest.html
+
