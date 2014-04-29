@@ -60,18 +60,21 @@ $(function() {
 
 ---
 
-## Example: T. cruzi co-expression network
+## Example motivation: T. cruzi co-expression network
 
 One example of where this kind of enrichment analysis could be useful is for
 determining possible roles for clusters of co-expressed genes.
 
 ![tcruzi coex network](assets/img/ModuleMembership.png)
 
+<span class='caption'>T. cruzi co-expression network modules detected by
+WGCNA</span>
+
 ---.segue .dark
 
 ## Background
 
----
+---.quote
 
 ## Gene Ontology (GO)
 
@@ -80,7 +83,13 @@ determining possible roles for clusters of co-expressed genes.
 <q>The Gene Ontology is a controlled vocabulary, a set of standard terms—words
 and phrases—used for indexing and retrieving information. In addition to
 defining terms, GO also defines the relationships between the terms, making
-it a structured vocabulary. (geneontology.org)</q>
+it a structured vocabulary.</q> - geneontology.org
+
+---
+
+## Gene Ontology (GO)
+
+### What is GO?
 
 - Provides a common language to describe features of genes from all different
   species.
@@ -161,7 +170,7 @@ likely to be selected.
 
 - Downloaded all human gene-term associations from the
   [Gene Ontology website](http://www.geneontology.org/).
-- Constructed a gene/annotation bipartite graph, represented by an 
+- Constructed a gene/annotation graph, represented by an 
   $n_G \times n_T$ adjacency matrix 
 
 ![adj matrix](assets/img/adj_matrix_small.png)
@@ -206,13 +215,15 @@ The remainder of the results are based on the biological process ontology:
 - Created 200 random gene sets:
   - $N_g$=200 genes in each set (a "typical" gene set size)
   - Varied number of annotations ($M_g$)
+  - Determined FET enrichment score for each of the 10192 BP GO terms
+
+### Results
+
+  - Number of unique annotations $\propto$ GO enrichment significance!
 
 ---
 
-## Question: What is the effect of annotation database properties on functional enrichment analysis?
-
-  - Determined FET enrichment score for each of the 10192 BP GO terms
-  - # Unique annotations $\propto$ GO enrichment significance!
+## Random gene set enrichment scores
 
 ![fig2a-b](assets/img/srep04191-f2a-b.jpg)
 
@@ -230,6 +241,58 @@ The remainder of the results are based on the biological process ontology:
 ## Annotation Enrichment Analysis (AEA)
 
 ![fig3](assets/img/srep04191-f3.jpg)
+
+---
+
+## Question: Does this bias also affect biologically relevant sets of genes?
+
+### Overview
+
+- So far, we've seen how AEA can correct for biases in the distribution of GO
+  terms and annotation coverage across genes.
+- Does this have any impact on downstream biological interpretations?
+
+### Experiment design:
+
+- Downloaded all expression signatures from
+  [Gene Signatures Database (GeneSigDB)](http://compbio.dfci.harvard.edu/genesigdb/) which contain $100 <=
+  n <= 1000$ genes which are annotated with a term in the BP ontology
+  (total=309)
+- First, plotted average number of annotations per gene set and compared it what would
+  be expected for random sets of genes (verify presence of bias.)
+- Next, measured enrichment in each set using FET and AEA and looked at
+  properties of genes deemed significant in one measure but not the other.
+
+---
+
+## GeneSigDB Signatures
+
+FET enrichment bias towards well-annotated genes is also present in biological
+datasets:
+
+![fig4](assets/img/srep04191-f4.jpg)
+
+---
+
+## Question: Does AEA provide any additional biological insights?
+
+### Experiment design:
+
+- For FET and AEA, each:
+    - Selected ~40 <span class='blue2'>GeneSigDB signatures</span> with the 
+      most significant enrichment scores.
+    - Select 40 <span class='blue2'>GO terms</span> with most significant 
+      enrichment scores across all signatures.
+- Performed hierarchical clustering.
+
+---
+
+## Functional enrichment clusters (FET vs. AEA)
+
+![fig5](assets/img/srep04191-f5.jpg)
+
+- rows = gene signatures
+- columns = GO terms
 
 ---
 

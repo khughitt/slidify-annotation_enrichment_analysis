@@ -102,13 +102,16 @@ about the distribution of annotations which may not be valid.</li>
 
 <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Example: T. cruzi co-expression network</h2>
+    <h2>Example motivation: T. cruzi co-expression network</h2>
   </hgroup>
   <article data-timings="">
     <p>One example of where this kind of enrichment analysis could be useful is for
 determining possible roles for clusters of co-expressed genes.</p>
 
 <p><img src="assets/img/ModuleMembership.png" alt="tcruzi coex network"></p>
+
+<p><span class='caption'>T. cruzi co-expression network modules detected by
+WGCNA</span></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -124,7 +127,7 @@ determining possible roles for clusters of co-expressed genes.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-4" style="background:;">
+<slide class="quote" id="slide-4" style="background:;">
   <hgroup>
     <h2>Gene Ontology (GO)</h2>
   </hgroup>
@@ -134,7 +137,18 @@ determining possible roles for clusters of co-expressed genes.</p>
 <p><q>The Gene Ontology is a controlled vocabulary, a set of standard terms—words
 and phrases—used for indexing and retrieving information. In addition to
 defining terms, GO also defines the relationships between the terms, making
-it a structured vocabulary. (geneontology.org)</q></p>
+it a structured vocabulary.</q> - geneontology.org</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Gene Ontology (GO)</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>What is GO?</h3>
 
 <ul>
 <li>Provides a common language to describe features of genes from all different
@@ -155,7 +169,7 @@ species.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-5" style="background:;">
+<slide class="" id="slide-6" style="background:;">
   <hgroup>
     <h2>Gene Ontology (GO)</h2>
   </hgroup>
@@ -171,7 +185,7 @@ species.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-6" style="background:;">
+<slide class="" id="slide-7" style="background:;">
   <hgroup>
     <h2>Many functional enrichment tools exist</h2>
   </hgroup>
@@ -183,7 +197,7 @@ species.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-7" style="background:;">
+<slide class="" id="slide-8" style="background:;">
   <hgroup>
     <h2>Common statistics used for enrichment analysis</h2>
   </hgroup>
@@ -202,7 +216,7 @@ likely to be selected.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-8" style="background:;">
+<slide class="" id="slide-9" style="background:;">
   <hgroup>
     <h2>Gene Set Enrichment Analysis (GSEA)</h2>
   </hgroup>
@@ -223,7 +237,7 @@ the top of a list of genes ranked by differential expression, etc.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-9" style="background:;">
+<slide class="" id="slide-10" style="background:;">
   <hgroup>
     <h2>Gene Set Enrichment Analysis (GSEA)</h2>
   </hgroup>
@@ -235,7 +249,7 @@ the top of a list of genes ranked by differential expression, etc.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-10" style="background:;">
+<slide class="" id="slide-11" style="background:;">
   <hgroup>
     <h2>Fisher&#39;s Exact Test (FET)</h2>
   </hgroup>
@@ -250,7 +264,7 @@ known functional annotation.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue dark" id="slide-11" style="background:;">
+<slide class="segue dark" id="slide-12" style="background:;">
   <hgroup>
     <h2>Results</h2>
   </hgroup>
@@ -260,7 +274,7 @@ known functional annotation.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-12" style="background:;">
+<slide class="" id="slide-13" style="background:;">
   <hgroup>
     <h2>Gene ontology characteristics</h2>
   </hgroup>
@@ -270,7 +284,7 @@ known functional annotation.</li>
 <ul>
 <li>Downloaded all human gene-term associations from the
 <a href="http://www.geneontology.org/">Gene Ontology website</a>.</li>
-<li>Constructed a gene/annotation bipartite graph, represented by an 
+<li>Constructed a gene/annotation graph, represented by an 
 \(n_G \times n_T\) adjacency matrix </li>
 </ul>
 
@@ -287,7 +301,7 @@ known functional annotation.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-13" style="background:;">
+<slide class="" id="slide-14" style="background:;">
   <hgroup>
     <h2>Gene ontology characteristics</h2>
   </hgroup>
@@ -308,7 +322,7 @@ number of genes.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-14" style="background:;">
+<slide class="" id="slide-15" style="background:;">
   <hgroup>
     <h2>Gene ontology characteristics</h2>
   </hgroup>
@@ -327,7 +341,7 @@ number of genes.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-15" style="background:;">
+<slide class="" id="slide-16" style="background:;">
   <hgroup>
     <h2>Question: What is the effect of annotation database properties on functional enrichment analysis?</h2>
   </hgroup>
@@ -340,30 +354,32 @@ number of genes.</li>
 <ul>
 <li>\(N_g\)=200 genes in each set (a &quot;typical&quot; gene set size)</li>
 <li>Varied number of annotations (\(M_g\))</li>
+<li>Determined FET enrichment score for each of the 10192 BP GO terms</li>
 </ul></li>
 </ul>
 
-  </article>
-  <!-- Presenter Notes -->
-</slide>
+<h3>Results</h3>
 
-<slide class="" id="slide-16" style="background:;">
-  <hgroup>
-    <h2>Question: What is the effect of annotation database properties on functional enrichment analysis?</h2>
-  </hgroup>
-  <article data-timings="">
-    <ul>
-<li>Determined FET enrichment score for each of the 10192 BP GO terms</li>
-<li># Unique annotations \(\propto\) GO enrichment significance!</li>
+<ul>
+<li>Number of unique annotations \(\propto\) GO enrichment significance!</li>
 </ul>
-
-<p><img src="assets/img/srep04191-f2a-b.jpg" alt="fig2a-b"></p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Random gene set enrichment scores</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/srep04191-f2a-b.jpg" alt="fig2a-b"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
   <hgroup>
     <h2>Perhaps the problem isn&#39;t quite so bad after correcting for multiple testing...</h2>
   </hgroup>
@@ -379,7 +395,7 @@ although it does seem to severely reduce the problem.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-18" style="background:;">
+<slide class="" id="slide-19" style="background:;">
   <hgroup>
     <h2>Annotation Enrichment Analysis (AEA)</h2>
   </hgroup>
@@ -390,7 +406,90 @@ although it does seem to severely reduce the problem.</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-19" style="background:;">
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Question: Does this bias also affect biologically relevant sets of genes?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Overview</h3>
+
+<ul>
+<li>So far, we&#39;ve seen how AEA can correct for biases in the distribution of GO
+terms and annotation coverage across genes.</li>
+<li>Does this have any impact on downstream biological interpretations?</li>
+</ul>
+
+<h3>Experiment design:</h3>
+
+<ul>
+<li>Downloaded all expression signatures from
+<a href="http://compbio.dfci.harvard.edu/genesigdb/">Gene Signatures Database (GeneSigDB)</a> which contain \(100 <=
+n <= 1000\) genes which are annotated with a term in the BP ontology
+(total=309)</li>
+<li>First, plotted average number of annotations per gene set and compared it what would
+be expected for random sets of genes (verify presence of bias.)</li>
+<li>Next, measured enrichment in each set using FET and AEA and looked at
+properties of genes deemed significant in one measure but not the other.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>GeneSigDB Signatures</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>FET enrichment bias towards well-annotated genes is also present in biological
+datasets:</p>
+
+<p><img src="assets/img/srep04191-f4.jpg" alt="fig4"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>Question: Does AEA provide any additional biological insights?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Experiment design:</h3>
+
+<ul>
+<li>For FET and AEA, each:
+
+<ul>
+<li>Selected ~40 <span class='blue2'>GeneSigDB signatures</span> with the 
+most significant enrichment scores.</li>
+<li>Select 40 <span class='blue2'>GO terms</span> with most significant 
+enrichment scores across all signatures.</li>
+</ul></li>
+<li>Performed hierarchical clustering.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Functional enrichment clusters (FET vs. AEA)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/srep04191-f5.jpg" alt="fig5"></p>
+
+<ul>
+<li>rows = gene signatures</li>
+<li>columns = GO terms</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
   <hgroup>
     <h2>Limitations</h2>
   </hgroup>
@@ -407,7 +506,7 @@ other GO sub-ontologies?</li>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="references" id="slide-20" style="background:;">
+<slide class="references" id="slide-25" style="background:;">
   <hgroup>
     <h2>References</h2>
   </hgroup>
@@ -434,7 +533,7 @@ other GO sub-ontologies?</li>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Example: T. cruzi co-expression network'>
+        data-slide=2 title='Example motivation: T. cruzi co-expression network'>
          2
       </a>
     </li>
@@ -458,19 +557,19 @@ other GO sub-ontologies?</li>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Many functional enrichment tools exist'>
+        data-slide=6 title='Gene Ontology (GO)'>
          6
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Common statistics used for enrichment analysis'>
+        data-slide=7 title='Many functional enrichment tools exist'>
          7
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Gene Set Enrichment Analysis (GSEA)'>
+        data-slide=8 title='Common statistics used for enrichment analysis'>
          8
       </a>
     </li>
@@ -482,19 +581,19 @@ other GO sub-ontologies?</li>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Fisher&#39;s Exact Test (FET)'>
+        data-slide=10 title='Gene Set Enrichment Analysis (GSEA)'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Results'>
+        data-slide=11 title='Fisher&#39;s Exact Test (FET)'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Gene ontology characteristics'>
+        data-slide=12 title='Results'>
          12
       </a>
     </li>
@@ -512,7 +611,7 @@ other GO sub-ontologies?</li>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Question: What is the effect of annotation database properties on functional enrichment analysis?'>
+        data-slide=15 title='Gene ontology characteristics'>
          15
       </a>
     </li>
@@ -524,26 +623,56 @@ other GO sub-ontologies?</li>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='Perhaps the problem isn&#39;t quite so bad after correcting for multiple testing...'>
+        data-slide=17 title='Random gene set enrichment scores'>
          17
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='Annotation Enrichment Analysis (AEA)'>
+        data-slide=18 title='Perhaps the problem isn&#39;t quite so bad after correcting for multiple testing...'>
          18
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=19 title='Limitations'>
+        data-slide=19 title='Annotation Enrichment Analysis (AEA)'>
          19
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='References'>
+        data-slide=20 title='Question: Does this bias also affect biologically relevant sets of genes?'>
          20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='GeneSigDB Signatures'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Question: Does AEA provide any additional biological insights?'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Functional enrichment clusters (FET vs. AEA)'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Limitations'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='References'>
+         25
       </a>
     </li>
   </ul>
