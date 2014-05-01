@@ -8,9 +8,6 @@ highlighter : highlight.js
 hitheme     : tomorrow
 widgets     : [mathjax]
 mode        : selfcontained
-github      : 
-  user: khughitt
-  repo: slidify-annotation_enrichment_analysis
 ---
 
 <!-- Custom Styles -->
@@ -19,10 +16,6 @@ github      :
         background: #e3f2fc;
         text-shadow: 2px 2px 5px #666;
         color: #2d4152;
-    }
-    slides > slide {
-        height: 800px;
-        margin-top: -400px;
     }
     img {
         max-height: 560px;
@@ -85,7 +78,7 @@ and phrases—used for indexing and retrieving information. In addition to
 defining terms, GO also defines the relationships between the terms, making
 it a structured vocabulary.</q> - geneontology.org
 
----.small
+---.smaller
 
 ## Gene Ontology (GO)
 
@@ -196,7 +189,7 @@ likely to be selected.
 - Considers the overlap between experiment gene set and set of genes with some
   known functional annotation.
 
-![Fisher's Exact test example](assets/img/FET_example_wolfram.png)
+<img src="assets/img/FET_example_wolfram.png" height='430px' alt="Fisher's Exact test example">
 <span class='caption'>(source:
 http://mathworld.wolfram.com/FishersExactTest.html)</span>
 
@@ -204,7 +197,7 @@ http://mathworld.wolfram.com/FishersExactTest.html)</span>
 
 ## Results
 
----
+---.smaller
 
 ## Gene ontology characteristics
 
@@ -215,7 +208,7 @@ http://mathworld.wolfram.com/FishersExactTest.html)</span>
 - Constructed a gene/annotation graph, represented by an 
   $n_G \times n_T$ adjacency matrix 
 
-![adj matrix](assets/img/adj_matrix_small.png)
+<img src="assets/img/adj_matrix_small.png" height='250px' alt="adj matrix">
 
 - $n_G$ - number of genes
 - $n_T$ - number of GO terms
@@ -276,7 +269,7 @@ The remainder of the results are based on the biological process ontology:
 - Multiple testing correction alone is not enough to deal with this bias,
   although it does seem to severely reduce the problem.
 
-![figs2](assets/img/srep04191-fs2.jpg)
+<img src='assets/img/srep04191-fs2.jpg' alt='Figure S2' height='400px' />
 
 ---
 
@@ -284,7 +277,7 @@ The remainder of the results are based on the biological process ontology:
 
 ![fig3](assets/img/srep04191-f3.jpg)
 
----
+---.small
 
 ## Question: Does this bias also affect biologically relevant sets of genes?
 
@@ -327,18 +320,18 @@ datasets:
       enrichment scores across all signatures.
 - Performed hierarchical clustering.
 
----
+---.smaller
 
 ## Functional enrichment clusters (FET vs. AEA)
 
-![fig5](assets/img/srep04191-f5.jpg)
+<img src='assets/img/srep04191-f5.jpg' alt='Figure 5' height='480px' />
 
 - rows = gene signatures
 - columns = GO terms
 
 ---
 
-## Real andi random term-signature comparisons
+## Real and random term-signature comparisons
 
 ![fig6](assets/img/srep04191-f6.jpg)
 
